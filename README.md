@@ -15,6 +15,7 @@ git add .
 git commit -m "yourmessage"
 git push origin "member-branch"
 
+BASE SETUP
 1. Clone repository to local:
 git clone https://github.com/ClinTuyor/exam-test-api
 cd exam-test-api
@@ -38,3 +39,25 @@ touch routes/exams.js
 
 git i express
 git i dotenv
+
+MEMBER'S TASK
+1. Member 1: Add GET feature to routes/exams.js endpoint
+git checkout -b branch-one
+
+const express = require('express');
+const router = express.Router();
+
+const exams = [
+    { id: 1, name: 'Midterm', date: "03-26-25"},
+    { id: 2, name: 'Final', date: "03-26-25"}
+]
+
+router.get('/exams', (req, res) => {
+    res.json(exams);    
+});
+
+module.exports = router;
+
+2. Member 2: Add POST feature to routes/exams.js endpoint
+git checkout -b branch-two
+

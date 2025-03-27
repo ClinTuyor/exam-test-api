@@ -10,4 +10,10 @@ router.get('/exams', (req, res) => {
     res.json(exams);    
 });
 
+router.post('/exams', (req, res) => {
+    const newExam = req.body;
+    exams.push(newExam);
+    res.status(201).json({ message: "Exam added", newExam });
+});
+
 module.exports = router;
