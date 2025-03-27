@@ -32,4 +32,9 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-3. 
+3. Create routes and add node_modules and .env to .gitignore
+mkdir routes
+touch routes/exams.js
+
+git i express
+git i dotenv
