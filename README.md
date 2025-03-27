@@ -61,3 +61,12 @@ module.exports = router;
 2. Member 2: Add POST feature to routes/exams.js endpoint
 git checkout -b branch-two
 
+router.post('/exams', (req, res) => {
+    const newExam = req.body;
+    exams.push(newExam);
+    res.status(201).json({ message: "Exam added", newExam });
+});
+
+3. Member 3: Add UPDATE feature to routes/exams.js endpoint
+git checkout -b branch-three
+
