@@ -70,3 +70,18 @@ router.post('/exams', (req, res) => {
 3. Member 3: Add UPDATE feature to routes/exams.js endpoint
 git checkout -b branch-three
 
+router.put('/exams/:id', (req, res) => {
+    const { id } = req.params;
+    const updateData = req.body;
+    const examIndex = exams.findIndex(e => e.id == id);
+
+    if (examIndex === -1) return res.status(404).json({ message: "Exam not found" });
+
+    exams[examIndex] = { ...exams[examIndex], ...updateData };
+    res.json({ message: "Exam updated", exam: exams[examIndex] });
+});
+
+BASE SETUP cont..
+4. Connect route to app.js
+const examsRoutes = require('./routes/exams');
+app.use('/api', examsRoutes);
